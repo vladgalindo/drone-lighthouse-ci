@@ -28,4 +28,4 @@ steps:
     message: Autodeploy of commit $$COMMIT
     targets: hosting
     commands:
-      - firebase deploy --token $FIREBASE_TOKEN
+      - firebase deploy --token $$FIREBASE_TOKEN
