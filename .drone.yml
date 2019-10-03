@@ -36,7 +36,6 @@ steps:
 
   - name: lighthouse-check
     pull: default
-    image: lighthousepsl/node
+    image: femtopixel/google-lighthouse
     commands:
-      - npm install -g lighthouse
       - npm run lh -- --perf=96 https://drone-test-982a9.web.app/
