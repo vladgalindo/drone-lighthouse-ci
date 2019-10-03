@@ -38,4 +38,4 @@ steps:
     pull: default
     image: femtopixel/google-lighthouse
     commands:
-      - npm run lh -- --perf=96 https://drone-test-982a9.web.app/
+      - npm run lh --  --chrome-flags='--headless' --perf=96 https://drone-test-982a9.web.app/
