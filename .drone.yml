@@ -28,5 +28,8 @@ steps:
     message: Autodeploy of commit $$COMMIT
     targets: hosting
     debug: true
+    environment:
+      FIREBASE_TOKEN:
+        from_secret: FIREBASE_TOKEN
     commands:
-      - firebase deploy --token $$FIREBASE_TOKEN
+      - firebase deploy --token $FIREBASE_TOKEN
