@@ -33,3 +33,11 @@ steps:
         from_secret: FIREBASE_TOKEN
     commands:
       - firebase deploy --token $FIREBASE_TOKEN
+
+  - name: lighthouse-check
+    pull: default
+    image: zenika/alpine-chrome
+    commands:
+      - apt-get install node
+      - npm install -g lighthouse
+      - lighthouse https://drone-test-982a9.web.app/
