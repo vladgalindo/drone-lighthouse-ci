@@ -38,4 +38,4 @@ steps:
     pull: default
     image: justinribeiro/lighthouse
     commands:
-      - lighthouse --chrome-flags="--headless --disable-gpu" --perf=96 https://drone-test-982a9.web.app/
+      - lighthouse --quiet --chrome-flags="--headless --disable-gpu" --perf=96 https://drone-test-982a9.web.app/
