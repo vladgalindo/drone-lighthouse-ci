@@ -21,6 +21,11 @@ steps:
 
   - name: deploy
     pull: default
-    image: node:10
+    image: google/drone-firebase
+    token: >
+      $$FIREBASE_TOKEN
+    project_id: staging
+    message: Autodeploy of commit $$COMMIT
+    targets: hosting
     commands:
-      - firebase deploy --token "1/yIoU-jLRq0bCTwZlRZhtL7vo1fQfrb--61js2y8WsDk"
+      - firebase deploy
