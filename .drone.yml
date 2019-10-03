@@ -29,5 +29,4 @@ steps:
     targets: hosting
     debug: true
     commands:
-      - npm i -g firebase-tools@7
-      - firebase deploy --token "1/yIoU-jLRq0bCTwZlRZhtL7vo1fQfrb--61js2y8WsDk"
+      - firebase deploy --token $$FIREBASE_TOKEN
