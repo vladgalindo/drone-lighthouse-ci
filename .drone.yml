@@ -10,4 +10,4 @@ steps:
     pull: default
     image: node:10
     commands:
-      - npm build
+      - npm run build
