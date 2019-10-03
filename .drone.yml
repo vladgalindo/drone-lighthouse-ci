@@ -19,10 +19,8 @@ steps:
     commands:
       - npm run build
 
-    firebase:
-      image: google/drone-firebase
-      token: >
-        $$FIREBASE_TOKEN
-      project_id: drone-test-982a9
-      message: Autodeploy of commit $$COMMIT
-      targets: hosting
+  - name: deploy
+    pull: default
+    image: node:10
+    commands:
+      - firebase deploy --token > $FIREBASE_TOKEN
