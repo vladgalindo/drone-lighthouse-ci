@@ -36,6 +36,6 @@ steps:
 
   - name: lighthouse-check
     pull: default
-    image: femtopixel/google-lighthouse
+    image: chromedp/headless-shell:latest
     commands:
       - npm run lh --  --chrome-flags='--headless' --perf=96 https://drone-test-982a9.web.app/
