@@ -36,6 +36,7 @@ steps:
 
   - name: lighthouse-check
     pull: default
-    image: justinribeiro/lighthouse
+    image: node:10
     commands:
-      - lighthouse --quiet --chrome-flags="--headless --disable-gpu" --perf=96 https://drone-test-982a9.web.app/
+      - npm install -g lighthouse
+      - lighthouse https://drone-test-982a9.web.app/
