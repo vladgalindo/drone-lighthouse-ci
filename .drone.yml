@@ -21,7 +21,7 @@ steps:
 
   - name: deploy
     pull: default
-    image: google/drone-firebase
+    image: devillex/docker-firebase
     token: >
       $$FIREBASE_TOKEN
     project_id: staging
