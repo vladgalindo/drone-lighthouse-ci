@@ -36,7 +36,7 @@ steps:
 
   - name: lighthouse-check
     pull: default
-    image: zenika/alpine-chrome
+    image: zenika/alpine-chrome:with-node
     commands:
       - npm install -g lighthouse
       - lighthouse https://drone-test-982a9.web.app/
