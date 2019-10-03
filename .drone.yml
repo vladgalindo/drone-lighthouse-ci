@@ -36,7 +36,7 @@ steps:
 
   - name: lighthouse-check
     pull: default
-    image: node:10
+    image: justinribeiro/chrome-headless
     commands:
       - npm install -g lighthouse
       - npm run lh -- --perf=96 https://drone-test-982a9.web.app/
