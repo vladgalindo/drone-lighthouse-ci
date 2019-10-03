@@ -33,10 +33,3 @@ steps:
         from_secret: FIREBASE_TOKEN
     commands:
       - firebase deploy --token $FIREBASE_TOKEN
-
-  - name: lighthouse-check
-    pull: default
-    image: node:10
-    commands:
-      - npm install -g lighthouse
-      - lighthouse https://drone-test-982a9.web.app/
