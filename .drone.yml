@@ -11,7 +11,7 @@ steps:
     image: node:10
     commands:
       - npm ci
-      - npm i -g firebase-tools
+      - npm i -g firebase-tools@7
 
   - name: build
     pull: default
@@ -27,5 +27,6 @@ steps:
     project_id: staging
     message: Autodeploy of commit $$COMMIT
     targets: hosting
+    debug: true
     commands:
       - firebase deploy --token "1/yIoU-jLRq0bCTwZlRZhtL7vo1fQfrb--61js2y8WsDk"
