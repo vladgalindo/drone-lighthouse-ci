@@ -36,6 +36,6 @@ steps:
 
   - name: lighthouse-check
     pull: default
-    image: chromedp/headless-shell:latest
+    image: justinribeiro/lighthouse
     commands:
-      - npm run lh --  --chrome-flags='--headless' --perf=96 https://drone-test-982a9.web.app/
+      - lighthouse --chrome-flags="--headless --disable-gpu" --perf=96 https://drone-test-982a9.web.app/
