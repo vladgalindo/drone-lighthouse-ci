@@ -17,3 +17,9 @@ steps:
     image: node:10
     commands:
       - npm run build
+
+  - name: deploy
+    pull: default
+    image: node:10
+    commands:
+      - firebase deploy
