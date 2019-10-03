@@ -11,6 +11,7 @@ steps:
     image: node:10
     commands:
       - npm ci
+      - npm i -g firebase-tools
 
   - name: build
     pull: default
