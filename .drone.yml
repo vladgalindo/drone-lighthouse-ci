@@ -45,5 +45,5 @@ steps:
       - |
         lighthouse "http://localhost" --chrome-flags="--no-sandbox --headless" --perf=100 --pwa=100 --seo=100 --a11y=100 --bp=100 --output json \
         | jq -r "{ description: \"YOUR TITLE HERE\", public: \"false\", files: {\"$(date "+%Y%m%d").lighthouse.report.json\": {content: (. | tostring) }}}" \
-        | curl -sS -X POST -H 'Content-Type: application/json' -u ${$GITHUB_OWNER}:${$GITHUB_TOKEN} -d @- https://api
+        | curl -sS -X POST -H 'Content-Type: application/json' -u $GITHUB_OWNER:$GITHUB_TOKEN -d @- https://api
         .github.com/gists > results.gist
