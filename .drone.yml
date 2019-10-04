@@ -36,6 +36,7 @@ steps:
 
   - name: lighthouse-check
     pull: default
+    user: root
     image: justinribeiro/lighthouse
     commands:
       - lighthouse --chrome-flags="--headless --no-sandbox" https://drone-test-982a9.web.app/
