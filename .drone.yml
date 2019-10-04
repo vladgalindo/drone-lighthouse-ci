@@ -22,8 +22,6 @@ steps:
   - name: deploy
     pull: default
     image: devillex/docker-firebase
-    token: >
-      $$FIREBASE_TOKEN
     project_id: staging
     message: Autodeploy of commit $$COMMIT
     targets: hosting
