@@ -37,9 +37,9 @@ steps:
     user: root
     image: kporras07/lighthouse-ci
     environment:
-      - GITHUB_OWNER:
+      GITHUB_OWNER:
         from_secret: GITHUB_OWNER
-      - GITHUB_TOKEN:
+      GITHUB_TOKEN:
         from_secret: GITHUB_TOKEN
     commands:
       - |
