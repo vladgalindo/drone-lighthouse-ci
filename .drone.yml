@@ -38,7 +38,7 @@ steps:
     image: kporras07/lighthouse-ci
     commands:
       - lighthouse --chrome-flags="--headless --no-sandbox" --perf=100 --pwa=100 --seo=100 --a11y=100 --bp=100  |
-        https://drone-test-982a9.web.app/ --output json jq -r |
-        "{ description: 'YOUR TITLE HERE', public: 'false', files: {'$(date '+%Y%m%d').lighthouse.report.json': {content: (. | tostring) }}}" |
-        curl -sS -X POST -H 'Content-Type: application/json' -u vladgalindo:816d90e4a499ce801c4207590ffa773657c045d9 -d @- |
-        https://api.github.com/gists > results.gist
+        https://drone-test-982a9.web.app/ \
+          --output json
+          -u ${GITHUB_OWNER}:${GITHUB_TOKEN} \
+          -d @- https://api.github.com/gists > results.gist
