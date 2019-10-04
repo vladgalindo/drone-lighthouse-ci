@@ -39,4 +39,4 @@ steps:
     user: root
     image: kporras07/lighthouse-ci
     commands:
-      - lighthouse --chrome-flags="--headless --no-sandbox" --perf=96 --pwa=100 https://drone-test-982a9.web.app/
+      - lighthouse --chrome-flags="--headless --no-sandbox" --perf=100 --pwa=100 --seo=100 --a11y=100 --bp=100 https://drone-test-982a9.web.app/
