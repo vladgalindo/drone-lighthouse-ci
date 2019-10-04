@@ -38,4 +38,4 @@ steps:
     pull: default
     image: justinribeiro/lighthouse
     commands:
-      - lighthouse --chrome-flags="--headless" https://drone-test-982a9.web.app/
+      - lighthouse --chrome-flags="--headless --no-sandbox" https://drone-test-982a9.web.app/
