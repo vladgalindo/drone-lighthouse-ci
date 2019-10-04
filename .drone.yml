@@ -38,5 +38,4 @@ steps:
     pull: default
     image: zenika/alpine-chrome:with-node
     commands:
-      - sudo npm install -g lighthouse
-      - lighthouse https://drone-test-982a9.web.app/
+      - lighthouse --chrome-flags="--headless" https://drone-test-982a9.web.app/
