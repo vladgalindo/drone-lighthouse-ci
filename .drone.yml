@@ -36,6 +36,6 @@ steps:
 
   - name: lighthouse-check
     pull: default
-    image: zenika/alpine-chrome:with-node
+    image: justinribeiro/lighthouse
     commands:
       - lighthouse --chrome-flags="--headless" https://drone-test-982a9.web.app/
