@@ -43,7 +43,4 @@ steps:
         from_secret: GITHUB_TOKEN
     commands:
       - |
-        lighthouse "http://localhost" --chrome-flags="--no-sandbox --headless" --perf=100 --pwa=100 --seo=100 --a11y=100 --bp=100 --output json \
-        | jq -r "{ description: \"YOUR TITLE HERE\", public: \"false\", files: {\"test.lighthouse.report.json\":
-        {content: (. | tostring) }}}" \
-        | curl -sS -X POST -H 'Content-Type: application/json' -u $GITHUB_OWNER:$GITHUB_TOKEN -d @- https://api.github.com/repos/vladgalindo/drone-lighthouse-ci/pull/1/comments > results.gist
+        npm run lh -- --chrome-flags="--headless --no-sandbox" --perf=100 --pwa=100 --seo=100 --a11y=100 --bp=100 https://drone-test-982a9.web.app/
