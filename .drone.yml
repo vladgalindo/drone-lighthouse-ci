@@ -44,5 +44,4 @@ steps:
     commands:
       - |
         npm run lh -- --chrome-flags="--headless --no-sandbox" --enable-error-reporting=true --perf=100 --pwa=100
-        --seo=100 --a11y=100 --bp=100
-        https://drone-test-982a9.web.app/
+        --seo=100 --a11y=100 --bp=100 https://drone-test-982a9.web.app/
