@@ -22,8 +22,6 @@ steps:
   - name: deploy
     pull: default
     image: devillex/docker-firebase
-    token: >
-      $$FIREBASE_TOKEN
     project_id: staging
     message: Autodeploy of commit $$COMMIT
     targets: hosting
@@ -36,6 +34,14 @@ steps:
 
   - name: lighthouse-check
     pull: default
-    image: femtopixel/google-lighthouse
+    user: root
+    image: kporras07/lighthouse-ci
+    environment:
+      GITHUB_OWNER:
+        from_secret: GITHUB_OWNER
+      GITHUB_TOKEN:
+        from_secret: GITHUB_TOKEN
     commands:
-      - npm run lh -- --perf=96 https://drone-test-982a9.web.app/
+      - |
+        npm run lh -- https://drone-test-982a9.web.app/ --chrome-flags="--headless --no-sandbox" --perf=100 --pwa=100
+         --seo=100 --a11y=100 --bp=100
